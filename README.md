@@ -11,6 +11,12 @@ Features
 ![](./imgs/arduino_rc2.png)
 La diferencia de este DAC es de solo 0.03 v, lo cual para pruebas esta bien. Se recomienda colocar el OPAMP modo seguir emisor para garantizar que la impedancia del circuito externo pueda afectar.
 
+![](./imgs/filtro_rc.png)
+
+
+
+
+
 ## Important: Timer1 reservation and conflicts
 -------------------------------------------
 This library directly configures Timer1 registers (TCCR1A/TCCR1B) and writes OCR1A. The Arduino Uno uses Timer1 for several common tasks and libraries (for example: tone() with certain pins, servo libraries that use Timer1, and PWM on pins 9/10). Using this library will therefore conflict with any other code that expects Timer1 to remain unchanged.
