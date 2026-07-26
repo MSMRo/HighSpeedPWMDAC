@@ -8,12 +8,8 @@ Features
 - API to set voltage (float, clamped to 0..Vcc) or raw 10-bit value (0..1023)
 - release() helper to disconnect Timer1 when needed (affects all Timer1 usage)
 
-Files:
-
-| File | Description |
-|---|---|
-| HighSpeedPWMDAC.h / HighSpeedPWMDAC.cpp | library implementation |
-| examples/Example_HighSpeedPWMDAC/HighSpeedPWMDAC_demo.ino | example sketch that reads A3 and writes to the DAC using pin 9|
+![](./imgs/arduino_rc2.png)
+La diferencia de este DAC es de solo 0.03 v, lo cual para pruebas esta bien. Se recomienda colocar el OPAMP modo seguir emisor para garantizar que la impedancia del circuito externo pueda afectar.
 
 ## Important: Timer1 reservation and conflicts
 -------------------------------------------
@@ -49,7 +45,7 @@ Practical wiring
 - Measure your final analog voltage at Vout (the junction between R and C).
 - Optionally buffer Vout with an op-amp if driving low impedance loads or to reduce load-related effects.
 
-![](./imgs/arduino_rc.png)
+![](./imgs/arduino_rc1.png)
 
 Estimating ripple
 - Roughly, PWM ripple magnitude depends on duty-cycle, RC time constant and PWM frequency. Using fc << fPWM reduces ripple amplitude significantly. If you need a quantitative ripple estimate, simulate or compute the RC step response for your PWM duty cycle and frequency.
