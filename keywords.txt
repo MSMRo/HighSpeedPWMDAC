@@ -1,0 +1,5 @@
+HighSpeedPWMDAC	keyword	HighSpeedPWMDAC class for high-speed PWM pseudo-DAC
+setVoltage	keyword	Set output voltage on the PWM DAC
+setRaw	keyword	Set raw 10-bit value on the PWM DAC
+release	keyword	Release Timer1 control from the library
+begin	keyword	Initialize HighSpeedPWMDAC and start Timer1 PWM
