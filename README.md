@@ -11,7 +11,7 @@ Features
 ![](./imgs/arduino_rc2.png)
 La diferencia de este DAC es de solo 0.03 v, lo cual para pruebas esta bien. Se recomienda colocar el OPAMP modo seguir emisor para garantizar que la impedancia del circuito externo pueda afectar.
 
-![](./imgs/filtro_rc.png)
+![](./imgs/filtro_RC.png)
 
 
 
@@ -51,7 +51,7 @@ Practical wiring
 - Measure your final analog voltage at Vout (the junction between R and C).
 - Optionally buffer Vout with an op-amp if driving low impedance loads or to reduce load-related effects.
 
-![](./imgs/arduino_rc1.png)
+![](./imgs/arduino_rc.png)
 
 Estimating ripple
 - Roughly, PWM ripple magnitude depends on duty-cycle, RC time constant and PWM frequency. Using fc << fPWM reduces ripple amplitude significantly. If you need a quantitative ripple estimate, simulate or compute the RC step response for your PWM duty cycle and frequency.
