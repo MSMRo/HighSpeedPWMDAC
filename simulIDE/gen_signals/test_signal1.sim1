@@ -1,0 +1,27 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-12" mainComp="false" Show_id="true" Show_Val="false" Pos="-284,-340" rotation="0" hflip="-1" vflip="-1" label="Uno-12" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega328-109" Frequency="16 MHz" Program="C:/Users/User/AppData/Local/simulide/codeeditor/buildIno/build/test_signal1.ino.hex" Auto_Load="false" saveEepr="true" MainMcu="true" SerialMon="-1" />
+</item>
+
+<item itemtype="Resistor" CircId="Resistor-13" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-248,-436" rotation="0" hflip="1" vflip="1" label="Resistor-13" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="20 kΩ" />
+
+<item itemtype="elCapacitor" CircId="elCapacitor-16" mainComp="false" ShowProp="Capacitance" Show_id="false" Show_Val="true" Pos="-208,-404" rotation="90" hflip="1" vflip="1" label="elCapacitor-16" idLabPos="-16,-24" labelrot="0" valLabPos="-8.44949,27.2787" valLabRot="-90" Capacitance="1 µF" Resistance="1 µΩ" InitVolt="0 V" ReaStep="0 ns" />
+
+<item itemtype="Ground" CircId="Ground-17" mainComp="false" Show_id="false" Show_Val="false" Pos="-208,-356" rotation="0" hflip="1" vflip="1" label="Ground-17" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Oscope" CircId="Oscope-18" mainComp="false" Show_id="false" Show_Val="false" Pos="-108,-520" rotation="0" hflip="1" vflip="1" label="Oscope-18" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _px" Basic_Y="135 _px" BufferSize="600000" connectGnd="true" InputImped="10 MΩ" TimDiv="74034068904" TimPos="17657641417,17657641417,17657641417,17657641417," VolDiv="0.97195,0.97195,0.97195,0.97195," Tunnels=",,,," Trigger="4" Filter="0.1 V" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="0.0409935,0.0409935,0.0409935,0.0409935," />
+
+<item itemtype="Node" CircId="Node-19" mainComp="false" Pos="-208,-436" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="Uno-12-9" endpinid="Resistor-13-lPin" pointList="-292,-436,-264,-436" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="elCapacitor-16-rPin" endpinid="Ground-17-Gnd" pointList="-208,-388,-208,-372" />
+
+<item itemtype="Connector" uid="Connector-4" startpinid="Oscope-18-Pin0" endpinid="Node-19-1" pointList="-196,-568,-208,-568,-208,-436" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="Resistor-13-rPin" endpinid="Node-19-0" pointList="-232,-436,-208,-436" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="Node-19-2" endpinid="elCapacitor-16-lPin" pointList="-208,-436,-208,-420" />
+
+</circuit>
