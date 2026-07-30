@@ -1,7 +1,9 @@
 # HighSpeedPWMDAC
 ================
 
-A small Arduino library to generate a high-speed PWM-based pseudo-DAC on Arduino Uno (ATmega328P) using Timer1 (OC1A / Digital Pin 9) configured as 10-bit Fast PWM (≈ 15.625 kHz, no prescaler).
+![](./imgs/arduino_gen.png)
+
+A  Arduino library to generate a PWM-based pseudo-DAC on Arduino Uno (ATmega328P) using Timer1 (OC1A / Digital Pin 9) configured as 10-bit Fast PWM (≈ 15.625 kHz, no prescaler).
 
 Features
 - Configure Timer1 for Fast PWM 10-bit and use OCR1A (pin 9) as a pseudo-DAC output
@@ -16,6 +18,48 @@ La diferencia de este DAC es de solo 0.03 v, lo cual para pruebas esta bien. Se 
 
 
 
+
+
+
+## Custom signal generation
+To generate your own signal, one way is to use:
+- web for creating EKG signals: https://ekgsim-isb.streamlit.app/
+
+
+![](./imgs/streamlit_Web_ekg.png)
+
+This web site may create ekg singal for including in this library. There you can find a button called ```Download Arduino Library (.h)```, where is possible to download a file .h like this:
+```c
+#ifndef SIGNAL_H
+#define SIGNAL_H
+
+#include <Arduino.h>
+#include <avr/pgmspace.h>
+
+const uint16_t SIGNAL_LENGTH = 4000;
+
+const uint8_t ecgSignal[SIGNAL_LENGTH] PROGMEM = {
+205,201,218,214,221,221,202,191,180,169,160,132,121,105,113,92,
+.
+.
+.
+.
+162,160,160,164,163,149,180,183,169,203,193,206,190,177,188,173,
+153,129,119,108,99,62,61,54,52,34,54,54,65,69,77,74,
+79,82,84,75,57,52,42,21,16,22,0,10,19,12,32,64
+
+};
+
+#endif
+
+```
+
+- The complete file is here [signal.h](./examples/test_signal1/signal.h)
+- The arduino code is here [test_signal1.ino](./examples/test_signal1/test_signal1.ino)
+- The SimulIDE projects is here: [test_signal1.sim1](./simulIDE/gen_signals/test_signal1.sim1)
+
+
+![](./imgs/custom_signal.png)
 
 ## Important: Timer1 reservation and conflicts
 -------------------------------------------
@@ -59,6 +103,7 @@ Estimating ripple
 Notes and caveats
 - This library assumes the board Vcc ≈ 5.0 V. If using a different Vcc, adjust expectations accordingly or modify the code to read Vcc from the MCU (e.g., using the internal bandgap reference) and update behavior.
 - The release() method clears Timer1 registers but does not restore previous Timer1 settings. If you need to preserve a pre-existing Timer1 configuration, capture registers before begin() and restore them later in your sketch.
+
 
 License
 -------
