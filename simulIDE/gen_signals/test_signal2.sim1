@@ -1,0 +1,27 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-56,-100" rotation="0" hflip="-1" vflip="-1" label="Uno-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega328-109" Frequency="16 MHz" Program="dac_waveform1.hex" Auto_Load="false" saveEepr="true" MainMcu="true" SerialMon="-1" />
+</item>
+
+<item itemtype="Resistor" CircId="Resistor-2" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-4,-200" rotation="0" hflip="1" vflip="1" label="Resistor-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="20 kΩ" />
+
+<item itemtype="elCapacitor" CircId="elCapacitor-3" mainComp="false" ShowProp="Capacitance" Show_id="false" Show_Val="true" Pos="40,-152" rotation="90" hflip="1" vflip="1" label="elCapacitor-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Capacitance="1 µF" Resistance="1 µΩ" InitVolt="0 V" ReaStep="0 ns" />
+
+<item itemtype="Ground" CircId="Ground-4" mainComp="false" Show_id="false" Show_Val="false" Pos="40,-100" rotation="0" hflip="1" vflip="1" label="Ground-4" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Oscope" CircId="Oscope-5" mainComp="false" Show_id="false" Show_Val="false" Pos="188,-320" rotation="0" hflip="1" vflip="1" label="Oscope-5" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _px" Basic_Y="135 _px" BufferSize="600000" connectGnd="true" InputImped="10 MΩ" TimDiv="35234732308" TimPos="-75297019365,-75297019365,-75297019365,-75297019365," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="4" Filter="0.1 V" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="0,0,0,0," />
+
+<item itemtype="Node" CircId="Node-6" mainComp="false" Pos="40,-200" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="Uno-1-9" endpinid="Resistor-2-lPin" pointList="-64,-196,-20,-196,-20,-200" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="elCapacitor-3-rPin" endpinid="Ground-4-Gnd" pointList="40,-136,40,-116" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="Resistor-2-rPin" endpinid="Node-6-0" pointList="12,-200,40,-200" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="Node-6-2" endpinid="elCapacitor-3-lPin" pointList="40,-200,40,-168" />
+
+<item itemtype="Connector" uid="Connector-4" startpinid="Oscope-5-Pin0" endpinid="Node-6-1" pointList="100,-368,40,-368,40,-200" />
+
+</circuit>
